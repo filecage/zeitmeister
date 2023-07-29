@@ -1,0 +1,20 @@
+{
+    "name": "zeitmeister",
+    "version": "0.0.0",
+    "description": "",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "dev-server": "nodemon src/server/server.ts"
+    },
+    "author": "David Beuchert <github-public@dbeuchert.com>",
+    "license": "UNLICENSED",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.1.0",
+        "@typescript-eslint/parser": "^6.1.0",
+        "eslint": "^8.45.0",
+        "nodemon": "^2.0.22",
+        "ts-node": "^10.9.1",
+        "tsconfig-paths": "^4.2.0"
+    }
+}
