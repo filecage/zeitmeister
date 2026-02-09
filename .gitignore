@@ -128,3 +128,6 @@ dist
 
 # IDE files
 /.idea
+
+# Package lockfile
+package-lock.json
