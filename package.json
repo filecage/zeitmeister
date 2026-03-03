@@ -6,13 +6,15 @@
     "main": "index.js",
     "scripts": {
         "dev-server": "tsx --watch src/server/server.ts",
+        "test": "tsx --watch src/test.ts",
         "lint": "eslint src/**"
     },
     "author": "David Beuchert <github-public@dbeuchert.com>",
     "license": "UNLICENSED",
     "dependencies": {
-        "@filecage/ical": "^0.3.0",
-        "date-fns": "^4.1"
+        "@filecage/ical": "^0.5.1",
+        "date-fns": "^4.1",
+        "tsdav": "^2.1.8"
     },
     "peerDependencies": {
         "typescript": "^5.9"
