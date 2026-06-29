@@ -5,6 +5,7 @@ import Timeslot from "@/zeitmeister/types/Timeslot";
 import ScheduleIntent from "@/zeitmeister/types/ScheduleIntent";
 import ScheduleResult from "@/zeitmeister/types/ScheduleResult";
 import CalendarProvider from "./CalendarProvider";
+import {DurationString} from "@/zeitmeister/types/DurationString";
 
 export default class Scheduler {
 
@@ -17,19 +18,19 @@ export default class Scheduler {
              * The default duration of an event in the format of an interval string
              * Example values: 30m, 1h30m
              */
-            duration: string,
+            duration: DurationString,
 
             /**
              * The default padding / duration between events in the format of an interval string
              * Example values: 10m, 30m
              */
-            padding: string,
+            padding: DurationString,
 
             /**
              * The default maximum time we're allowing users to plan ahead
              * Example values: 14d, 30d
              */
-            planningAhead: string,
+            planningAhead: DurationString,
         }
     }) : Scheduler {
         throw new Error(`Not implemented`);
