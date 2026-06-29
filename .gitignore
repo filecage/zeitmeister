@@ -131,3 +131,10 @@ dist
 
 # Package lockfile
 package-lock.json
+
+# Local testing files
+/resources
+test.ts
+
+# macOS files
+.DS_Store
