@@ -6,7 +6,7 @@
     "main": "index.js",
     "scripts": {
         "dev-server": "tsx --watch src/server/server.ts",
-        "test": "tsx --watch src/test.ts",
+        "test": "vitest",
         "lint": "eslint src/**"
     },
     "author": "David Beuchert <github-public@dbeuchert.com>",
@@ -24,6 +24,7 @@
         "@eslint/js": "^9.39.2",
         "eslint": "^9.39.2",
         "tsx": "^4.21.0",
-        "typescript-eslint": "^8.55.0"
+        "typescript-eslint": "^8.55.0",
+        "vitest": "^4.1.9"
     }
 }
