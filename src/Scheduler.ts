@@ -11,9 +11,22 @@ export default class Scheduler {
         availability: AvailabilityRule[],
         scheduleActors: ScheduleActor[],
         defaults: {
-            // These are all interval strings (e.g. 10d, 15m, 1h30m)
+            /**
+             * The default duration of an event in the format of an interval string
+             * Example values: 30m, 1h30m
+             */
             duration: string,
+
+            /**
+             * The default padding / duration between events in the format of an interval string
+             * Example values: 10m, 30m
+             */
             padding: string,
+
+            /**
+             * The default maximum time we're allowing users to plan ahead
+             * Example values: 14d, 30d
+             */
             planningAhead: string,
         }
     }) {
