@@ -4,9 +4,11 @@ import ScheduleActor from "@/zeitmeister/types/ScheduleActor";
 import Timeslot from "@/zeitmeister/types/Timeslot";
 import ScheduleIntent from "@/zeitmeister/types/ScheduleIntent";
 import ScheduleResult from "@/zeitmeister/types/ScheduleResult";
+import CalendarProvider from "./CalendarProvider";
 
 export default class Scheduler {
-    constructor (private readonly schedulerConfig: {
+
+    static fromConfig (schedulerConfig: {
         calendars: CalendarConfig[],
         availability: AvailabilityRule[],
         scheduleActors: ScheduleActor[],
@@ -29,9 +31,12 @@ export default class Scheduler {
              */
             planningAhead: string,
         }
-    }) {
-
+    }) : Scheduler {
     }
+
+    constructor (
+        private readonly calendarProvider: CalendarProvider
+    ) {}
 
     async query (query: Timeslot) : Promise<Timeslot[]> {
         // TODO: Implement me!
