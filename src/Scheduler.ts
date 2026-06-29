@@ -32,6 +32,7 @@ export default class Scheduler {
             planningAhead: string,
         }
     }) : Scheduler {
+        throw new Error(`Not implemented`);
     }
 
     constructor (
@@ -40,6 +41,7 @@ export default class Scheduler {
 
     async query (query: Timeslot) : Promise<Timeslot[]> {
         // TODO: Implement me!
+        throw new Error(`Not implemented`);
     }
 
     /**
@@ -49,5 +51,6 @@ export default class Scheduler {
      */
     async schedule (intent: ScheduleIntent) : Promise<ScheduleResult> {
         // TODO: Implement me!
+        throw new Error(`Not implemented`);
     }
 }
