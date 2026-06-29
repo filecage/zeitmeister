@@ -1,0 +1,70 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Rules are normalised 1`] = `
+[
+  {
+    "days": [
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday",
+    ],
+    "end": "18:00",
+    "start": "09:42",
+  },
+  {
+    "days": [
+      "monday",
+      "thursday",
+    ],
+    "end": "18:00",
+    "start": "10:00",
+  },
+  {
+    "days": [
+      "friday",
+      "saturday",
+      "sunday",
+    ],
+    "end": "16:00",
+    "start": "12:00",
+  },
+  {
+    "days": [
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday",
+      "saturday",
+      "sunday",
+    ],
+    "end": "18:00",
+    "start": "10:30",
+  },
+  {
+    "days": [
+      "friday",
+      "saturday",
+      "sunday",
+      "monday",
+    ],
+    "end": "18:00",
+    "start": "10:30",
+  },
+  {
+    "days": [
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday",
+      "saturday",
+      "sunday",
+    ],
+    "end": "19:00",
+    "start": "10:42",
+  },
+]
+`;
