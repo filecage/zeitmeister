@@ -1,6 +1,6 @@
 import AvailabilityRule, {AvailabilityRuleMultiple, HourMinute, Weekday} from "@/zeitmeister/types/AvailabilityRule";
 
-const WEEKDAYS: Weekday[] = [
+export const WEEKDAYS: Weekday[] = [
     'sunday',
     'monday',
     'tuesday',
@@ -8,7 +8,7 @@ const WEEKDAYS: Weekday[] = [
     'thursday',
     'friday',
     'saturday'
-];
+] as const;
 
 /**
  * Normalises multi- and single availability rules.
