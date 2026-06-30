@@ -2,6 +2,10 @@ import Timeslot from "@/zeitmeister/types/Timeslot";
 import {addMinutes} from "date-fns";
 
 export function *chunkTimeslot (timeslot: Timeslot, chunkLengthInMinutes: number, paddingInMinutes: number = 0) : Generator<Timeslot> {
+    if (chunkLengthInMinutes === 0 && paddingInMinutes === 0) {
+        throw new Error(`Can not chunk timeslot if chunk length and padding is zero`);
+    }
+
     const cursor = new Date(timeslot.start);
 
     while (cursor < timeslot.end) {

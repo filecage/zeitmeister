@@ -98,7 +98,7 @@ exports[`Should chunk the timeslot from 10:30 to 17:00 in 13 chunks of 30 minute
 ]
 `;
 
-exports[`Should chunk the timeslot over multiple days and months  1`] = `
+exports[`Should chunk the timeslot over multiple days and months 1`] = `
 [
   {
     "end": 2026-06-30T16:30:00.000Z,
@@ -131,6 +131,31 @@ exports[`Should chunk the timeslot over multiple days and months  1`] = `
   {
     "end": 2026-07-02T11:40:00.000Z,
     "start": 2026-07-02T05:40:00.000Z,
+  },
+]
+`;
+
+exports[`Should chunk zero-length chunks 1`] = `
+[
+  {
+    "end": 2026-06-30T10:00:00.000Z,
+    "start": 2026-06-30T10:00:00.000Z,
+  },
+  {
+    "end": 2026-06-30T10:01:00.000Z,
+    "start": 2026-06-30T10:01:00.000Z,
+  },
+  {
+    "end": 2026-06-30T10:02:00.000Z,
+    "start": 2026-06-30T10:02:00.000Z,
+  },
+  {
+    "end": 2026-06-30T10:03:00.000Z,
+    "start": 2026-06-30T10:03:00.000Z,
+  },
+  {
+    "end": 2026-06-30T10:04:00.000Z,
+    "start": 2026-06-30T10:04:00.000Z,
   },
 ]
 `;
