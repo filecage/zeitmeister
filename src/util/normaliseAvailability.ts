@@ -1,13 +1,13 @@
 import AvailabilityRule, {AvailabilityRuleMultiple, HourMinute, Weekday} from "@/zeitmeister/types/AvailabilityRule";
 
 const WEEKDAYS: Weekday[] = [
+    'sunday',
     'monday',
     'tuesday',
     'wednesday',
     'thursday',
     'friday',
-    'saturday',
-    'sunday'
+    'saturday'
 ];
 
 /**
