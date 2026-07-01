@@ -84,14 +84,14 @@ const slots = scheduler.query({
 type slot = {
     start: Date,
     end: Date,
+    available: boolean, // whether this slot is available or not
 }
 ```
 
 This will
 1. Read your calendars and create busy times from all of your events within the query timeframe that don't have `FBTYPE` set to `FREE`
-2. Create a negative of busy times from your `availability config` for each week within the query timeframe
-3. Pass the busy times to the Recal scheduler along with your default scheduling options
-4. Returns available slots
+2. Create a negative of busy times from your `availability config` for each week within the query timeframe 
+3. Return available slots
 
 ### Schedule a slot
 ```ts
