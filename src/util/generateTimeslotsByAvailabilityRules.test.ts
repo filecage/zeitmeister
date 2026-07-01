@@ -21,4 +21,16 @@ test('Should correctly create availability slots', () => {
         {start: 'monday 10:00', end: 'thursday 18:00'},
         {start: 'friday 10:00', end: 'friday 13:00'}, // Freitag um eins macht jeder seins
     ])]).toMatchSnapshot();
-})
+});
+
+test('Should correctly end slot generation if last day has 23:59:59', () => {
+    expect([...generateTimeslotsByAvailabilityRules({start: new Date('2026-02-17T00:00:00Z'), end: new Date('2026-02-17T23:59:59Z')}, [
+        {days: ['tuesday', 'wednesday', 'thursday', 'friday'], start: '10:00', end: '18:00'},
+        {days: ['monday'], start: '13:00', end: '18:00'},
+    ])]).toEqual([
+        {
+            "end": new Date("2026-02-17T17:00:00.000Z"),
+            "start": new Date("2026-02-17T09:00:00.000Z"),
+        }
+    ])
+});

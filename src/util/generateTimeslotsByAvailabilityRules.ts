@@ -2,12 +2,10 @@ import {endOfDay, startOfDay} from "date-fns";
 import AvailabilityRule, {HourMinute} from "@/zeitmeister/types/AvailabilityRule";
 import Timeslot from "@/zeitmeister/types/Timeslot";
 import {normaliseAvailability, WEEKDAYS} from "./normaliseAvailability";
+import timeslot from "@/zeitmeister/types/Timeslot";
 
 /**
  * This function generates timeslots for the given availability rules.
- *
- * It's important to note that the query timeframe will *not* be filtered: if you pass an availability rule with `monday 10:00`
- * and your query time starts at monday 11:00, the first timeslot will still be at 10:00. You have to filter manually.
  */
 export function *generateTimeslotsByAvailabilityRules (between: {start: Date, end: Date}, availabilityRules: AvailabilityRule[]) : Generator<Timeslot> {
     if (between.start >= between.end || availabilityRules.length === 0) {
@@ -40,7 +38,9 @@ export function *generateTimeslotsByAvailabilityRules (between: {start: Date, en
                 end.setDate(end.getDate() + 1);
             }
 
-            timeslots.push({start, end});
+            if (start >= between.start && end <= between.end) {
+                timeslots.push({start, end});
+            }
         }
 
         // Move cursor to next day
@@ -64,12 +64,10 @@ export function *generateTimeslotsByAvailabilityRules (between: {start: Date, en
             yield currentSlot;
             currentSlot = timeslot;
         }
-
-        // If this is the last index, emit now
-        if (i === timeslots.length - 1) {
-            yield currentSlot;
-        }
     }
+
+    // Emit last slot when loop has run (or hasn't if there was only one item)
+    yield currentSlot;
 }
 
 function hourMinuteToMinutes (hm: HourMinute) : number {
