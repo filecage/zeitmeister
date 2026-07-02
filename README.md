@@ -6,8 +6,6 @@ access to my calendars.
 
 It uses
 - [`@filecage/ical-ts`](https://github.com/filecage/ical-ts) for iCal parsing
-- [`@jkbrzt/rrule`](https://github.com/jkbrzt/rrule) for RRULE parsing and recurrence creation
-- [`@recal-dev/scheduling-sdk`](https://github.com/recal-dev/scheduling-sdk) for the scheduling logic
 - [`@natelindev/tsdav`](https://github.com/natelindev/tsdav) as CalDAV client
 - [`date-fns`](https://github.com/date-fns/date-fns) for DateTime- and timezone handling
 
@@ -97,7 +95,7 @@ This will
 3. Return available slots
 
 ### Schedule a slot
-> [!WARNING] Scheduling is not yet implemented :)
+> [!WARN] Scheduling is not yet implemented :)
 
 ```ts
 
