@@ -2,7 +2,6 @@ import {endOfDay, startOfDay} from "date-fns";
 import AvailabilityRule, {HourMinute} from "@/zeitmeister/types/AvailabilityRule";
 import Timeslot from "@/zeitmeister/types/Timeslot";
 import {normaliseAvailability, WEEKDAYS} from "./normaliseAvailability";
-import timeslot from "@/zeitmeister/types/Timeslot";
 
 /**
  * This function generates timeslots for the given availability rules.

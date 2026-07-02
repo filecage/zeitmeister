@@ -79,6 +79,7 @@ export default class Scheduler {
      * @param {ScheduleIntent} intent
      * @throws SchedulingError
      */
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async schedule (intent: ScheduleIntent) : Promise<ScheduleResult> {
         // TODO: Implement me!
         throw new Error(`Not implemented`);
