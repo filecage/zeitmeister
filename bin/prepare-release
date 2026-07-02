@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+
+// This script prepares the release by setting the release version and exported build files
+// to the package.json. It also cleans up some release-obsolete properties, like `scripts`
+// or `devDependencies`
+
+import {resolve, dirname} from 'path';
+import {fileURLToPath} from 'url';
+import fs from 'fs/promises';
+import packageDefinition from '../package.json' with { type: "json" };
+
+const [,,version] = process.argv;
+
+// Fail if any of these conditions are not met
+assert(version !== undefined && version.match(/^\d+.\d+.\d+$/), `ERROR: Not a valid version '${version}'`);
+assert(packageDefinition.version === undefined, `ERROR: 'version' is already defined in package.json`);
+
+// Delete obsolete flags that only clutter the file
+delete packageDefinition.scripts;
+delete packageDefinition.devDependencies;
+
+// Build a new definition object to take control of the property ordering
+const releasePackageDefinition = {
+	name: packageDefinition.name,
+	version,
+	...packageDefinition,
+};
+
+
+// Write file
+const packageDefinitionFilePath = buildAppPath('./package.json');
+await fs.writeFile(packageDefinitionFilePath, JSON.stringify(releasePackageDefinition, null, '    '));
+
+console.log(`OK: Release ${version}`);
+
+
+function buildAppPath (path) {
+	return resolve(dirname(fileURLToPath(import.meta.url)), '../' + path);
+}
+
+function assert (assertion, errorMessage) {
+	if (!!assertion !== true) {
+		console.log(errorMessage);
+		process.exit(1);
+	}
+}

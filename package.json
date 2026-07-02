@@ -1,13 +1,13 @@
 {
     "name": "@filecage/zeitmeister",
-    "version": "0.0.0",
     "description": "",
     "type": "module",
     "scripts": {
         "dev-server": "tsx --watch src/server/server.ts",
         "test": "vitest",
         "lint": "eslint src/**",
-        "build": "tsdown"
+        "build": "tsdown",
+        "prepare-release": "node ./bin/prepare-release"
     },
     "author": "David Beuchert <github-public@dbeuchert.com>",
     "license": "UNLICENSED",
