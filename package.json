@@ -7,7 +7,8 @@
     "scripts": {
         "dev-server": "tsx --watch src/server/server.ts",
         "test": "vitest",
-        "lint": "eslint src/**"
+        "lint": "eslint src/**",
+        "build": "tsdown"
     },
     "author": "David Beuchert <github-public@dbeuchert.com>",
     "license": "UNLICENSED",
@@ -22,6 +23,7 @@
     "devDependencies": {
         "@eslint/js": "^9.39.2",
         "eslint": "^9.39.2",
+        "tsdown": "^0.22.3",
         "tsx": "^4.22.4",
         "typescript-eslint": "^8.62.1",
         "vitest": "^4.1.9"
