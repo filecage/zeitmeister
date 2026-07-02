@@ -22,13 +22,16 @@ type Calendar = {
     identifier?: string,
     
     // Type of the calendar. Be aware that `ical` cannot be used as SchedulingCalendar because it's read-only.
-    adapter: 'caldav' | 'googlecalendar' | 'ical',
+    adapter: 'caldav', // not supported yet: | 'googlecalendar' | 'ical',
+
+    // URIs of the exact calendars that you want to check for. Can be relative to the server URI
+    uris: string[],
     
-   auth: {
-       uri: string,
-       username: string,
-       password: string,
-   }
+    // Currently only username/password for HTTP basic auth supported
+    auth: {
+        username: string,
+        password: string,
+    }
 }
 ```
 
@@ -94,6 +97,8 @@ This will
 3. Return available slots
 
 ### Schedule a slot
+> [!WARNING] Scheduling is not yet implemented :)
+
 ```ts
 
 enum ScheduleResult {
