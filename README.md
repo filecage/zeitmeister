@@ -95,7 +95,8 @@ This will
 3. Return available slots
 
 ### Schedule a slot
-> [!WARN] Scheduling is not yet implemented :)
+> [!WARNING]
+> Scheduling is not yet implemented :)
 
 ```ts
 
