@@ -25,6 +25,9 @@
         "typescript": "^5.9",
         "vitest": "^4.1.9"
     },
+    "files": [
+        "dist"
+    ],
     "exports": {
         ".": "./dist/index.mjs",
         "./package.json": "./package.json"
