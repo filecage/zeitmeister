@@ -12,6 +12,9 @@
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "noEmit": true,
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
         "paths": {
             "@/zeitmeister/types/*": ["./src/types/*"]
         }
