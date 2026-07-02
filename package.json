@@ -1,6 +1,6 @@
 {
     "name": "@filecage/zeitmeister",
-    "description": "",
+    "description": "zeitmeister is an open source library for scheduling appointments over an unlimited number of calendars.",
     "type": "module",
     "scripts": {
         "dev-server": "tsx --watch src/server/server.ts",
